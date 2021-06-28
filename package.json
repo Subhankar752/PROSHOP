@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "MERN shopping application",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "start": "node backend/server"
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client \""
   },
   "repository": {
     "type": "git",
@@ -12,6 +16,8 @@
   },
   "author": "Subhankar Majumdar",
   "dependencies": {
+    "devenv": "^1.0.1",
+    "dotenv": "^10.0.0",
     "express": "4.17.1"
   },
   "license": "ISC",
